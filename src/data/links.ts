@@ -54,11 +54,11 @@ export interface SupportData {
 }
 
 export const profile: Profile = {
-  name: "Alex Rivera",
-  handle: "@alexcreates",
+  name: "Bagus Insan Pradana",
+  handle: "@rockhead07",
   avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop",
   bio: "Creative developer & UI designer crafting playful digital experiences, 3D web experiments, and modern apps.",
-  location: "Jakarta, Indonesia",
+  location: "Indonesia, East Java",
   verified: true,
 };
 
