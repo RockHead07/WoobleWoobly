@@ -9,10 +9,10 @@ const avatarId = 'floating-avatar-widget';
 
 <div
   id={avatarId}
-  class={`fixed bottom-6 right-6 z-50 flex flex-col items-end select-none pointer-events-auto ${className}`}
+  class={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end select-none pointer-events-auto ${className}`}
 >
   <!-- Interactive speech bubble / greeting -->
-  <div class="mb-2 mr-1 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 px-3.5 py-1.5 rounded-2xl shadow-xl text-xs font-semibold text-slate-200 flex items-center gap-1.5 animate-bounce [animation-duration:3s]">
+  <div class="mb-1.5 mr-1 bg-slate-900/90 backdrop-blur-md border border-slate-700/80 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-2xl shadow-xl text-[11px] sm:text-xs font-semibold text-slate-200 flex items-center gap-1.5 animate-bounce [animation-duration:3s]">
     <span>Looking around!</span>
     <span class="text-sm">👀</span>
   </div>
@@ -23,10 +23,10 @@ const avatarId = 'floating-avatar-widget';
     class="relative group cursor-pointer transition-transform duration-300 transform hover:scale-110 active:scale-95"
   >
     <!-- Ambient glow behind avatar -->
-    <div class="absolute -inset-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full blur-md opacity-60 group-hover:opacity-100 transition duration-300"></div>
+    <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full blur-md opacity-60 group-hover:opacity-100 transition duration-300"></div>
 
     <!-- Avatar Head (Cute 2D Creature/Character) -->
-    <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 p-1 shadow-2xl border-2 border-white/20 flex items-center justify-center overflow-hidden">
+    <div class="relative w-16 h-16 sm:w-22 sm:h-22 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 p-0.5 sm:p-1 shadow-2xl border-2 border-white/20 flex items-center justify-center overflow-hidden">
       <!-- Head Body SVG -->
       <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Cute ear puffs -->
@@ -59,12 +59,12 @@ const avatarId = 'floating-avatar-widget';
         <!-- Left Eye Socket -->
         <div
           data-eye="left"
-          class="absolute left-[28%] top-[38%] w-5 h-6 bg-white rounded-full border-2 border-slate-900/40 shadow-inner flex items-center justify-center overflow-hidden"
+          class="absolute left-[28%] top-[38%] w-4.5 h-5.5 sm:w-5 sm:h-6 bg-white rounded-full border-2 border-slate-900/40 shadow-inner flex items-center justify-center overflow-hidden"
         >
           <!-- Left Pupil -->
           <div
             data-pupil="left"
-            class="w-3 h-3 bg-[#0f172a] rounded-full relative will-change-transform flex items-start justify-end p-0.5"
+            class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#0f172a] rounded-full relative will-change-transform flex items-start justify-end p-0.5"
           >
             <!-- Catchlight -->
             <div class="w-1 h-1 bg-white rounded-full"></div>
@@ -74,12 +74,12 @@ const avatarId = 'floating-avatar-widget';
         <!-- Right Eye Socket -->
         <div
           data-eye="right"
-          class="absolute right-[28%] top-[38%] w-5 h-6 bg-white rounded-full border-2 border-slate-900/40 shadow-inner flex items-center justify-center overflow-hidden"
+          class="absolute right-[28%] top-[38%] w-4.5 h-5.5 sm:w-5 sm:h-6 bg-white rounded-full border-2 border-slate-900/40 shadow-inner flex items-center justify-center overflow-hidden"
         >
           <!-- Right Pupil -->
           <div
             data-pupil="right"
-            class="w-3 h-3 bg-[#0f172a] rounded-full relative will-change-transform flex items-start justify-end p-0.5"
+            class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-[#0f172a] rounded-full relative will-change-transform flex items-start justify-end p-0.5"
           >
             <!-- Catchlight -->
             <div class="w-1 h-1 bg-white rounded-full"></div>
