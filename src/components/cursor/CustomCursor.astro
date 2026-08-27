@@ -7,6 +7,18 @@
   </div>
 </div>
 
+<style>
+  /* Guaranteed hide on touch/mobile devices */
+  @media (pointer: coarse), (hover: none) {
+    .curzr-arrow-pointer {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+  }
+</style>
+
 <script>
   class ArrowPointer {
     cursorWrapper: HTMLElement | null;
@@ -137,7 +149,9 @@
     }
   }
 
-  const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  // Explicit check to disable completely on Android & touch devices
+  const isTouchOrMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+  const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches && !isTouchOrMobile;
 
   if (isFinePointer) {
     const arrowCursor = new ArrowPointer();
