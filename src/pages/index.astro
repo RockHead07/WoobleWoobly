@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProfileHeader from '../components/profile/ProfileHeader.astro';
+import SocialLinks from '../components/profile/SocialLinks.astro';
+import LinkCard from '../components/links/LinkCard.astro';
+import CTACard from '../components/links/CTACard.astro';
+import NewsletterBar from '../components/links/NewsletterBar.astro';
+import SupportButton from '../components/SupportButton.astro';
+import FloatingAvatar from '../components/avatar/FloatingAvatar.astro';
+import CustomCursor from '../components/cursor/CustomCursor.astro';
+---
+
+<BaseLayout>
+  <!-- Optional Custom Cursor -->
+  <CustomCursor />
+
+  <!-- Main Container (Centered single column, max-w-xl) -->
+  <main class="min-h-screen w-full flex flex-col items-center justify-start px-4 sm:px-6 py-8 sm:py-12">
+    <div class="w-full max-w-lg mx-auto flex flex-col space-y-6 sm:space-y-7">
+      
+      <!-- 1. Profile Header (Photo, Name, Bio, Location) -->
+      <ProfileHeader />
+
+      <!-- 2. Social Links Row -->
+      <SocialLinks />
+
+      <!-- 3. Quick-Link Cards (2-column Grid) -->
+      <LinkCard />
+
+      <!-- 4. CTA / Product Card (e.g. eBook / Promo) -->
+      <CTACard />
+
+      <!-- 5. Newsletter Sign-up Bar -->
+      <NewsletterBar />
+
+      <!-- 6. Support / Buy Me a Coffee Button -->
+      <SupportButton />
+
+      <!-- Footer -->
+      <footer class="pt-6 pb-12 text-center text-xs text-slate-400 space-y-1">
+        <p>© {new Date().getFullYear()} WoobleWoobly. Built with Astro & Tailwind CSS.</p>
+        <p class="text-[11px] text-slate-400">Crafted with reactive 2D interactive avatar</p>
+      </footer>
+    </div>
+  </main>
+
+  <!-- 7. Floating Avatar (Astro Island client component) -->
+  <FloatingAvatar />
+</BaseLayout>

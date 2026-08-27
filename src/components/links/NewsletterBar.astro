@@ -1,0 +1,47 @@
+---
+import { newsletter } from '../../data/links';
+---
+
+<section class="w-full">
+  <div class="rounded-lg bg-slate-900/80 border border-slate-800 p-5 sm:p-6 backdrop-blur-sm shadow-xl">
+    <div class="flex items-center gap-3 mb-2">
+      <div class="w-8 h-8 rounded-md bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+        </svg>
+      </div>
+      <h2 class="text-base font-bold text-white">
+        {newsletter.title}
+      </h2>
+    </div>
+
+    <p class="text-xs sm:text-sm text-slate-400 mb-4 leading-relaxed">
+      {newsletter.description}
+    </p>
+
+    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2.5">
+      <input
+        type="email"
+        required
+        placeholder={newsletter.placeholder}
+        class="flex-1 bg-slate-950/70 border border-slate-800 focus:border-indigo-500 rounded-md px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-all"
+      />
+      <button
+        type="submit"
+        class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-all shadow-md shadow-indigo-600/20 active:scale-98 cursor-pointer"
+      >
+        {newsletter.buttonText}
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('newsletter-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for subscribing to the newsletter!');
+    });
+  }
+</script>

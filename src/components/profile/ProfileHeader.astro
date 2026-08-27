@@ -1,0 +1,51 @@
+---
+import { profile } from '../../data/links';
+---
+
+<header class="flex flex-col items-center text-center space-y-4 pt-8 pb-4">
+  <!-- Profile Avatar Image with Glow -->
+  <div class="relative group">
+    <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-75 blur-md group-hover:opacity-100 transition duration-500 group-hover:scale-105"></div>
+    <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-slate-700/80 shadow-2xl bg-slate-900">
+      <img
+        src={profile.avatarUrl}
+        alt={profile.name}
+        class="w-full h-full object-cover group-hover:scale-110 transition duration-500 ease-out"
+        loading="eager"
+      />
+    </div>
+    {profile.verified && (
+      <div class="absolute bottom-0 right-0 bg-blue-500 text-white rounded-full p-1 border-2 border-[#090d16] shadow-md" title="Verified Creator">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    )}
+  </div>
+
+  <!-- Name & Handle -->
+  <div class="space-y-1">
+    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center justify-center gap-2">
+      {profile.name}
+    </h1>
+    <p class="text-sm font-semibold text-indigo-400">
+      {profile.handle}
+    </p>
+  </div>
+
+  <!-- Bio -->
+  <p class="text-slate-300 text-sm sm:text-base max-w-md leading-relaxed px-4">
+    {profile.bio}
+  </p>
+
+  <!-- Location Badge (Optional) -->
+  {profile.location && (
+    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-medium text-slate-400">
+      <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+      <span>{profile.location}</span>
+    </div>
+  )}
+</header>

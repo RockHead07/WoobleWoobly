@@ -1,0 +1,32 @@
+<div id="custom-cursor" class="pointer-events-none fixed top-0 left-0 z-50 -translate-x-1/2 -translate-y-1/2 rounded-full border border-indigo-400/40 bg-indigo-500/10 backdrop-blur-[1px] transition-all duration-75 ease-out hidden w-8 h-8"></div>
+<div id="custom-cursor-dot" class="pointer-events-none fixed top-0 left-0 z-50 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-400 hidden w-1.5 h-1.5"></div>
+
+<script>
+  const isHoverSupported = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (isHoverSupported) {
+    const cursor = document.getElementById('custom-cursor');
+    const cursorDot = document.getElementById('custom-cursor-dot');
+
+    if (cursor && cursorDot) {
+      cursor.classList.remove('hidden');
+      cursorDot.classList.remove('hidden');
+
+      window.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+        cursorDot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+      }, { passive: true });
+
+      // Grow on interactive hover
+      const interactiveEls = document.querySelectorAll('a, button, input, [data-avatar-head]');
+      interactiveEls.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          cursor.classList.add('scale-150', 'border-indigo-400', 'bg-indigo-500/20');
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.classList.remove('scale-150', 'border-indigo-400', 'bg-indigo-500/20');
+        });
+      });
+    }
+  }
+</script>
