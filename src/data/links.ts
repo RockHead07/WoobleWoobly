@@ -125,12 +125,12 @@ export const quickLinks: QuickLink[] = [
 ];
 
 export const cta: CTACardData = {
-  badge: "✨ Featured Work",
-  title: "Visit My Official Portfolio",
-  subtitle: "Interactive Web Experiences & Projects",
-  description: "Check out my full personal portfolio website with live demos, case studies, and modern frontend experiments.",
-  buttonText: "Open Portfolio",
-  buttonUrl: "https://bagus-insan-pradana.vercel.app/",
+  badge: "💼 Available for Hire",
+  title: "Open for Any Side Gigs",
+  subtitle: "With pretty decent cost!",
+  description: "Need help building modern web apps, playful UI/UX experiences, 3D websites, or custom frontend development? Feel free to reach out!",
+  buttonText: "Let's Work Together",
+  buttonUrl: "https://www.linkedin.com/in/bagus-insan-pradana-69513434a/",
 };
 
 export const connect: ConnectData = {
