@@ -3,22 +3,22 @@ import { cta } from '../../data/links';
 ---
 
 <section class="w-full">
-  <div class="relative overflow-hidden rounded-lg bg-gradient-to-br from-indigo-900/40 via-purple-900/30 to-slate-900/90 border border-indigo-500/40 p-5 sm:p-6 shadow-2xl backdrop-blur-md">
-    <!-- Decorative background glow -->
-    <div class="absolute -top-12 -right-12 w-36 h-36 bg-pink-500/20 rounded-full blur-2xl pointer-events-none"></div>
-    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none"></div>
+  <div class="relative overflow-hidden rounded-xl bg-[#D6E6F2]/75 border border-[#B9D7EA] p-5 sm:p-6 shadow-xl backdrop-blur-md">
+    <!-- Decorative subtle light ambient glow -->
+    <div class="absolute -top-12 -right-12 w-36 h-36 bg-[#B9D7EA]/60 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-[#F7FBFC] rounded-full blur-2xl pointer-events-none"></div>
 
     <div class="relative z-10 flex flex-col space-y-3.5">
-      <!-- Badge & Price Row -->
+      <!-- Badge Row -->
       <div class="flex items-center justify-between gap-2">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30 text-xs font-bold text-pink-300">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#B9D7EA]/80 border border-[#769FCD]/30 text-xs font-bold text-slate-800 shadow-sm">
           {cta.badge}
         </span>
         {cta.price && (
           <div class="flex items-baseline gap-1.5">
-            <span class="text-lg font-black text-white">{cta.price}</span>
+            <span class="text-lg font-black text-slate-900">{cta.price}</span>
             {cta.originalPrice && (
-              <span class="text-xs text-slate-400 line-through">{cta.originalPrice}</span>
+              <span class="text-xs text-slate-500 line-through">{cta.originalPrice}</span>
             )}
           </div>
         )}
@@ -26,16 +26,16 @@ import { cta } from '../../data/links';
 
       <!-- Title & Subtitle -->
       <div>
-        <h2 class="text-base sm:text-lg font-extrabold text-white leading-tight">
+        <h2 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">
           {cta.title}
         </h2>
-        <p class="text-xs sm:text-sm font-semibold text-indigo-300 mt-0.5">
+        <p class="text-xs sm:text-sm font-bold text-[#769FCD] mt-0.5">
           {cta.subtitle}
         </p>
       </div>
 
       <!-- Description -->
-      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+      <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
         {cta.description}
       </p>
 
@@ -44,7 +44,7 @@ import { cta } from '../../data/links';
         href={cta.buttonUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-md font-bold text-sm text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 shadow-lg shadow-indigo-500/25 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+        class="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-lg font-bold text-sm text-white bg-[#769FCD] hover:bg-[#648ebc] shadow-lg shadow-[#769FCD]/25 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
       >
         <span>{cta.buttonText}</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

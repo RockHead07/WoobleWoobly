@@ -40,9 +40,9 @@ const getBrandClasses = (platform: string) => {
     };
   }
   return {
-    btnHover: 'hover:bg-indigo-600 group-[.is-hovered]/social:bg-indigo-600 hover:border-indigo-600 group-[.is-hovered]/social:border-indigo-600 hover:text-white group-[.is-hovered]/social:text-white hover:shadow-[0_8px_20px_rgba(99,102,241,0.35)] group-[.is-hovered]/social:shadow-[0_8px_20px_rgba(99,102,241,0.35)]',
-    tooltipBg: 'bg-indigo-600 border-indigo-600',
-    arrowBg: 'bg-indigo-600',
+    btnHover: 'hover:bg-[#769FCD] group-[.is-hovered]/social:bg-[#769FCD] hover:border-[#769FCD] group-[.is-hovered]/social:border-[#769FCD] hover:text-white group-[.is-hovered]/social:text-white hover:shadow-[0_8px_20px_rgba(118,159,205,0.35)] group-[.is-hovered]/social:shadow-[0_8px_20px_rgba(118,159,205,0.35)]',
+    tooltipBg: 'bg-[#769FCD] border-[#769FCD]',
+    arrowBg: 'bg-[#769FCD]',
   };
 };
 ---
@@ -68,7 +68,7 @@ const getBrandClasses = (platform: string) => {
           rel="noopener noreferrer"
           aria-label={item.label}
           data-social-btn
-          class={`w-11 h-11 rounded-lg bg-white/85 border border-slate-200/90 backdrop-blur-xl backdrop-saturate-150 text-slate-700 flex items-center justify-center transition-all duration-300 transform group-hover/social:-translate-y-1 group-[.is-hovered]/social:-translate-y-1 active:scale-95 shadow-sm shadow-slate-200/50 ${brand.btnHover}`}
+          class={`w-11 h-11 rounded-xl bg-white/90 border border-[#B9D7EA] backdrop-blur-xl text-slate-700 flex items-center justify-center transition-all duration-300 transform group-hover/social:-translate-y-1 group-[.is-hovered]/social:-translate-y-1 active:scale-95 shadow-sm shadow-[#D6E6F2] ${brand.btnHover}`}
         >
           {item.icon === 'github' && (
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">

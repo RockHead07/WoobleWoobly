@@ -14,7 +14,7 @@ const avatarId = 'floating-avatar-widget';
   <!-- Interactive speech bubble / greeting -->
   <div
     data-speech-bubble
-    class="mb-2 mr-1 bg-white/95 backdrop-blur-xl border border-indigo-200/90 px-3.5 py-1.5 rounded-2xl shadow-xl text-[11px] sm:text-xs font-bold text-slate-800 flex items-center gap-1.5 transition-transform duration-200 cursor-pointer shadow-indigo-500/10 hover:scale-105"
+    class="mb-2 mr-1 bg-white/95 backdrop-blur-xl border border-[#B9D7EA] px-3.5 py-1.5 rounded-2xl shadow-lg text-[11px] sm:text-xs font-bold text-slate-800 flex items-center gap-1.5 transition-transform duration-200 cursor-pointer shadow-[#769FCD]/15 hover:scale-105"
   >
     <span data-speech-text>Hai! Semangat ya! ✨</span>
     <span data-speech-emoji class="text-sm">(=^･ω･^=)</span>
@@ -26,11 +26,11 @@ const avatarId = 'floating-avatar-widget';
     class="relative group cursor-pointer transition-all duration-300 transform hover:scale-110 active:scale-95"
     title="Click me for a 3D reaction!"
   >
-    <!-- Ambient glowing aura -->
-    <div class="absolute -inset-2.5 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 rounded-full blur-md opacity-70 group-hover:opacity-100 group-hover:blur-lg transition duration-300"></div>
+    <!-- Ambient glowing aura in palette blue -->
+    <div class="absolute -inset-2.5 bg-[#B9D7EA]/60 rounded-full blur-md opacity-70 group-hover:opacity-100 group-hover:blur-lg transition duration-300"></div>
 
     <!-- 3D Avatar Badge Frame (Circular Three.js Canvas Container) -->
-    <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-slate-900 via-indigo-950 to-purple-950 shadow-2xl border-2 border-pink-400/50 flex items-center justify-center overflow-hidden">
+    <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#D6E6F2] via-[#F7FBFC] to-[#D6E6F2] shadow-xl border-2 border-[#769FCD]/60 flex items-center justify-center overflow-hidden">
       <!-- Three.js Canvas Mounting Node -->
       <div data-avatar-canvas class="w-full h-full flex items-center justify-center"></div>
     </div>

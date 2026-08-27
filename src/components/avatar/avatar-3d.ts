@@ -55,7 +55,7 @@ export function init3DAvatar(containerId: string) {
   keyLight.position.set(2, 4, 3);
   scene.add(keyLight);
 
-  const fillLight = new THREE.DirectionalLight(0xa78bfa, 1.4);
+  const fillLight = new THREE.DirectionalLight(0xB9D7EA, 1.4);
   fillLight.position.set(-3, 2, -2);
   scene.add(fillLight);
 
