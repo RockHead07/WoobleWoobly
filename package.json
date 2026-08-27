@@ -12,7 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.2.8"
+    "@types/three": "^0.185.4",
+    "astro": "^7.2.8",
+    "three": "^0.185.1"
   },
   "allowScripts": {
     "esbuild": true

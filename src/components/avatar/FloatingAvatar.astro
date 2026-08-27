@@ -14,9 +14,9 @@ const avatarId = 'floating-avatar-widget';
   <!-- Interactive speech bubble / greeting -->
   <div
     data-speech-bubble
-    class="mb-1.5 mr-1 bg-white/95 backdrop-blur-xl border border-indigo-200/90 px-3 py-1.5 rounded-2xl shadow-xl text-[11px] sm:text-xs font-bold text-slate-800 flex items-center gap-1.5 transition-transform duration-200 cursor-pointer shadow-indigo-500/10"
+    class="mb-2 mr-1 bg-white/95 backdrop-blur-xl border border-indigo-200/90 px-3.5 py-1.5 rounded-2xl shadow-xl text-[11px] sm:text-xs font-bold text-slate-800 flex items-center gap-1.5 transition-transform duration-200 cursor-pointer shadow-indigo-500/10 hover:scale-105"
   >
-    <span data-speech-text>Tap me! ✨</span>
+    <span data-speech-text>Hai! Semangat ya! ✨</span>
     <span data-speech-emoji class="text-sm">(=^･ω･^=)</span>
   </div>
 
@@ -24,114 +24,15 @@ const avatarId = 'floating-avatar-widget';
   <div
     data-avatar-head
     class="relative group cursor-pointer transition-all duration-300 transform hover:scale-110 active:scale-95"
-    title="Click me for a cute reaction!"
+    title="Click me for a 3D reaction!"
   >
     <!-- Ambient glowing aura -->
-    <div class="absolute -inset-2 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 rounded-full blur-md opacity-60 group-hover:opacity-90 group-hover:blur-lg transition duration-300"></div>
+    <div class="absolute -inset-2.5 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 rounded-full blur-md opacity-70 group-hover:opacity-100 group-hover:blur-lg transition duration-300"></div>
 
-    <!-- Chibi Avatar Badge / Head Frame -->
-    <div class="relative w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-gradient-to-tr from-slate-900 via-indigo-950 to-purple-950 p-1 shadow-2xl border-2 border-pink-400/40 flex items-center justify-center overflow-hidden">
-      
-      <!-- Chibi Head SVG (Kawaii Cat Chibi) -->
-      <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="chibiSkin" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#fff1f2" />
-            <stop offset="0.7" stop-color="#ffe4e6" />
-            <stop offset="1" stop-color="#fecdd3" />
-          </linearGradient>
-
-          <linearGradient id="chibiHair" x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#a855f7" />
-            <stop offset="0.5" stop-color="#8b5cf6" />
-            <stop offset="1" stop-color="#6366f1" />
-          </linearGradient>
-
-          <linearGradient id="earInner" x1="0" y1="0" x2="1" y2="1">
-            <stop stop-color="#f472b6" />
-            <stop offset="1" stop-color="#fb7185" />
-          </linearGradient>
-        </defs>
-
-        <!-- Cute Chibi Cat Ears -->
-        <!-- Left Ear Outer -->
-        <path d="M22 42L12 16C24 16 36 24 38 34Z" fill="url(#chibiHair)" />
-        <!-- Left Ear Inner -->
-        <path d="M22 36L16 20C23 20 30 26 32 32Z" fill="url(#earInner)" opacity="0.85" />
-
-        <!-- Right Ear Outer -->
-        <path d="M78 42L88 16C76 16 64 24 62 34Z" fill="url(#chibiHair)" />
-        <!-- Right Ear Inner -->
-        <path d="M78 36L84 20C77 20 70 26 68 32Z" fill="url(#earInner)" opacity="0.85" />
-
-        <!-- Head Base -->
-        <circle cx="50" cy="52" r="38" fill="url(#chibiSkin)" />
-
-        <!-- Chibi Hair Bangs (Top/Forehead) -->
-        <path d="M16 48C18 30 32 20 50 20C68 20 82 30 84 48C78 42 70 42 62 45C56 38 48 38 42 44C36 40 28 42 16 48Z" fill="url(#chibiHair)" />
-
-        <!-- Cute Anime Blush Cheeks -->
-        <ellipse cx="27" cy="62" rx="7" ry="4" fill="#fb7185" opacity="0.6" filter="blur(0.5px)" />
-        <ellipse cx="73" cy="62" rx="7" ry="4" fill="#fb7185" opacity="0.6" filter="blur(0.5px)" />
-        <!-- Blush lines -->
-        <path d="M24 60L26 64M28 60L30 64" stroke="#f43f5e" stroke-width="1.2" stroke-linecap="round" />
-        <path d="M70 60L72 64M74 60L76 64" stroke="#f43f5e" stroke-width="1.2" stroke-linecap="round" />
-
-        <!-- Kawaii Cat Smile (:3) -->
-        <path d="M44 65C46 67 48 67 50 65C52 67 54 67 56 65" stroke="#4c1d95" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-
-        <!-- Tiny nose dot -->
-        <circle cx="50" cy="60" r="1.2" fill="#e11d48" opacity="0.7" />
-      </svg>
-
-      <!-- Eyes Overlay Layer -->
-      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <!-- Left Chibi Eye Socket -->
-        <div
-          data-eye="left"
-          class="absolute left-[26%] top-[42%] w-6 h-7 bg-white rounded-full border-2 border-[#4c1d95]/70 shadow-inner flex items-center justify-center overflow-hidden"
-        >
-          <!-- Left Pupil (Large sparkling chibi eye) -->
-          <div
-            data-pupil="left"
-            class="w-4.5 h-4.5 bg-gradient-to-b from-[#1e1b4b] via-[#4338ca] to-[#7c3aed] rounded-full relative will-change-transform flex items-center justify-center shadow-sm"
-          >
-            <!-- Big primary catchlight -->
-            <div class="absolute top-0.5 right-1 w-1.5 h-1.5 bg-white rounded-full shadow-sm"></div>
-            <!-- Small secondary sparkle -->
-            <div class="absolute bottom-0.5 left-1 w-0.8 h-0.8 bg-pink-200 rounded-full opacity-90"></div>
-          </div>
-
-          <!-- Eyelid for blinking / winking -->
-          <div
-            data-eyelid
-            class="absolute inset-0 bg-[#ffe4e6] origin-top transition-transform duration-100 ease-in-out transform scale-y-0 z-10 border-b-2 border-[#4c1d95]"
-          ></div>
-        </div>
-
-        <!-- Right Chibi Eye Socket -->
-        <div
-          data-eye="right"
-          class="absolute right-[26%] top-[42%] w-6 h-7 bg-white rounded-full border-2 border-[#4c1d95]/70 shadow-inner flex items-center justify-center overflow-hidden"
-        >
-          <!-- Right Pupil (Large sparkling chibi eye) -->
-          <div
-            data-pupil="right"
-            class="w-4.5 h-4.5 bg-gradient-to-b from-[#1e1b4b] via-[#4338ca] to-[#7c3aed] rounded-full relative will-change-transform flex items-center justify-center shadow-sm"
-          >
-            <!-- Big primary catchlight -->
-            <div class="absolute top-0.5 right-1 w-1.5 h-1.5 bg-white rounded-full shadow-sm"></div>
-            <!-- Small secondary sparkle -->
-            <div class="absolute bottom-0.5 left-1 w-0.8 h-0.8 bg-pink-200 rounded-full opacity-90"></div>
-          </div>
-
-          <!-- Eyelid for blinking / winking -->
-          <div
-            data-eyelid
-            class="absolute inset-0 bg-[#ffe4e6] origin-top transition-transform duration-100 ease-in-out transform scale-y-0 z-10 border-b-2 border-[#4c1d95]"
-          ></div>
-        </div>
-      </div>
+    <!-- 3D Avatar Badge Frame (Circular Three.js Canvas Container) -->
+    <div class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-slate-900 via-indigo-950 to-purple-950 shadow-2xl border-2 border-pink-400/50 flex items-center justify-center overflow-hidden">
+      <!-- Three.js Canvas Mounting Node -->
+      <div data-avatar-canvas class="w-full h-full flex items-center justify-center"></div>
     </div>
   </div>
 </div>
@@ -154,12 +55,17 @@ const avatarId = 'floating-avatar-widget';
 </style>
 
 <script>
-  import { initAvatar } from './avatar-idle';
+  import { init3DAvatar } from './avatar-3d';
 
-  document.addEventListener('DOMContentLoaded', () => {
-    initAvatar('floating-avatar-widget');
-  });
+  const setupAvatar = () => {
+    init3DAvatar('floating-avatar-widget');
+  };
 
-  // Also support Astro view transitions / client hydrations
-  initAvatar('floating-avatar-widget');
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupAvatar);
+  } else {
+    setupAvatar();
+  }
+
+  document.addEventListener('astro:page-load', setupAvatar);
 </script>
