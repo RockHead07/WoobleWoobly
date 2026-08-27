@@ -3,31 +3,29 @@ import { support } from '../data/links';
 ---
 
 <section class="w-full pt-2">
-  <div class="relative overflow-hidden rounded-xl bg-[#D6E6F2]/70 border border-[#B9D7EA] p-5 sm:p-6 backdrop-blur-md text-center flex flex-col items-center gap-3.5 shadow-xl">
+  <!-- Solid Yellow Rectangular Card Background -->
+  <div class="relative overflow-hidden rounded-2xl bg-[#FFDD00] border-2 border-amber-400 p-5 sm:p-6 text-center flex flex-col items-center gap-3.5 shadow-xl">
     
-    <!-- Ambient subtle glow behind button -->
-    <div class="absolute -top-10 -right-10 w-28 h-28 bg-[#B9D7EA]/60 rounded-full blur-2xl pointer-events-none"></div>
-
     <div class="space-y-1 relative z-10">
-      <h3 class="text-sm font-bold text-slate-900 tracking-wide flex items-center justify-center gap-1.5">
+      <h3 class="text-base font-black text-slate-950 tracking-tight flex items-center justify-center gap-1.5">
         <span>{support.title}</span>
       </h3>
-      <p class="text-xs text-slate-600 max-w-sm font-medium">
+      <p class="text-xs sm:text-sm text-slate-900 font-semibold max-w-sm leading-relaxed">
         {support.description}
       </p>
     </div>
 
-    <!-- Solid Yellow Buy Me a Coffee Button -->
+    <!-- High-Contrast Button inside Yellow Card -->
     <div class="relative z-10 flex justify-center w-full max-w-xs">
       <a
         href={support.url}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2.5 w-full py-3.5 px-6 rounded-xl font-black text-xs sm:text-sm text-slate-950 bg-[#FFDD00] hover:bg-[#ffe53b] active:scale-95 shadow-md shadow-amber-500/25 border border-amber-300 transform hover:-translate-y-0.5 transition-all duration-200 tracking-wider uppercase cursor-pointer"
+        class="inline-flex items-center justify-center gap-2.5 w-full py-3 px-6 rounded-xl font-extrabold text-xs sm:text-sm text-white bg-slate-950 hover:bg-slate-900 active:scale-95 shadow-lg shadow-black/20 transform hover:-translate-y-0.5 transition-all duration-200 tracking-wider uppercase cursor-pointer"
         aria-label="Buy me a coffee"
       >
         <!-- Coffee Cup Icon -->
-        <svg class="w-5 h-5 fill-current text-slate-950" viewBox="0 0 24 24">
+        <svg class="w-4 h-4 fill-current text-[#FFDD00]" viewBox="0 0 24 24">
           <path d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z" />
         </svg>
         <span>Buy me a coffee</span>
