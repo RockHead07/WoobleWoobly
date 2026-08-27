@@ -36,10 +36,11 @@ export interface CTACardData {
   originalPrice?: string;
 }
 
-export interface NewsletterData {
+export interface ConnectData {
   title: string;
   description: string;
-  placeholder: string;
+  emailPlaceholder: string;
+  messagePlaceholder: string;
   buttonText: string;
   endpointUrl?: string;
 }
@@ -135,16 +136,26 @@ export const cta: CTACardData = {
   description: "A comprehensive practical guide to building memorable web experiences with Astro, Tailwind, and interactive animations.",
   buttonText: "Get the Handbook",
   buttonUrl: "https://example.com/handbook",
-  price: "",
-  originalPrice: "",
+  price: "$19",
+  originalPrice: "$39",
 };
 
-export const newsletter: NewsletterData = {
-  title: "Stay in the loop",
-  description: "Join 4,000+ developers receiving monthly insights on web dev, creative coding, and UI/UX tips. No spam, ever.",
-  placeholder: "Enter your best email address...",
-  buttonText: "Subscribe",
+export const connect: ConnectData = {
+  title: "Connect with me",
+  description: "Have a project in mind, collaboration idea, or just want to say hi? Drop your email and a message below!",
+  emailPlaceholder: "Your email address (e.g. alex@example.com)",
+  messagePlaceholder: "Write your message or inquiry here...",
+  buttonText: "Send Message",
   endpointUrl: "#",
+};
+
+// Backward-compatible alias for existing imports
+export const newsletter = {
+  title: connect.title,
+  description: connect.description,
+  placeholder: connect.emailPlaceholder,
+  buttonText: connect.buttonText,
+  endpointUrl: connect.endpointUrl,
 };
 
 export const support: SupportData = {

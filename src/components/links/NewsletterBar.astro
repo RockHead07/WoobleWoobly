@@ -1,47 +1,80 @@
 ---
-import { newsletter } from '../../data/links';
+import { connect } from '../../data/links';
 ---
 
 <section class="w-full">
-  <div class="rounded-lg bg-slate-900/80 border border-slate-800 p-5 sm:p-6 backdrop-blur-sm shadow-xl">
-    <div class="flex items-center gap-3 mb-2">
-      <div class="w-8 h-8 rounded-md bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+  <div class="relative overflow-hidden rounded-lg bg-gradient-to-b from-white/[0.09] via-white/[0.04] to-transparent border border-white/20 p-5 sm:p-6 backdrop-blur-2xl backdrop-saturate-150 shadow-[inset_0_1px_1.5px_0_rgba(255,255,255,0.35),0_10px_30px_-5px_rgba(0,0,0,0.45)]">
+    
+    <!-- Top Header of Connect section -->
+    <div class="flex items-center gap-2.5 mb-2">
+      <div class="w-8 h-8 rounded-md bg-indigo-500/25 border border-indigo-400/35 text-indigo-300 flex items-center justify-center shadow-inner">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
       </div>
-      <h2 class="text-base font-bold text-white">
-        {newsletter.title}
+      <h2 class="text-base font-bold text-white tracking-tight">
+        {connect.title}
       </h2>
     </div>
 
-    <p class="text-xs sm:text-sm text-slate-400 mb-4 leading-relaxed">
-      {newsletter.description}
+    <!-- Description -->
+    <p class="text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
+      {connect.description}
     </p>
 
-    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2.5">
-      <input
-        type="email"
-        required
-        placeholder={newsletter.placeholder}
-        class="flex-1 bg-slate-950/70 border border-slate-800 focus:border-indigo-500 rounded-md px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-all"
-      />
+    <!-- Connect Form with Email & Message Fields -->
+    <form id="connect-form" class="flex flex-col space-y-3">
+      <!-- Email Field -->
+      <div>
+        <label for="connect-email" class="block text-xs font-semibold text-slate-400 mb-1">
+          Email Address
+        </label>
+        <input
+          id="connect-email"
+          type="email"
+          required
+          placeholder={connect.emailPlaceholder}
+          class="w-full bg-slate-950/60 border border-white/15 focus:border-indigo-400 focus:bg-slate-950/80 rounded-md px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-400 transition-all backdrop-blur-sm shadow-inner"
+        />
+      </div>
+
+      <!-- Message Field -->
+      <div>
+        <label for="connect-message" class="block text-xs font-semibold text-slate-400 mb-1">
+          Your Message
+        </label>
+        <textarea
+          id="connect-message"
+          rows="2"
+          required
+          placeholder={connect.messagePlaceholder}
+          class="w-full bg-slate-950/60 border border-white/15 focus:border-indigo-400 focus:bg-slate-950/80 rounded-md px-3.5 py-2.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-indigo-400 transition-all backdrop-blur-sm shadow-inner resize-none"
+        ></textarea>
+      </div>
+
+      <!-- Submit Button -->
       <button
         type="submit"
-        class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-5 py-2.5 rounded-md transition-all shadow-md shadow-indigo-600/20 active:scale-98 cursor-pointer"
+        class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-md font-bold text-xs sm:text-sm text-white bg-indigo-600 hover:bg-indigo-500 border border-indigo-400/40 shadow-lg shadow-indigo-600/30 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
       >
-        {newsletter.buttonText}
+        <span>{connect.buttonText}</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+        </svg>
       </button>
     </form>
   </div>
 </section>
 
 <script>
-  const form = document.getElementById('newsletter-form');
+  const form = document.getElementById('connect-form') as HTMLFormElement | null;
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Thank you for subscribing to the newsletter!');
+      const emailInput = document.getElementById('connect-email') as HTMLInputElement | null;
+      const email = emailInput?.value || 'your email';
+      alert(`Thank you! Your message has been received from ${email}. I will get back to you shortly! 🚀`);
+      form.reset();
     });
   }
 </script>
