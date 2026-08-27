@@ -130,7 +130,7 @@ export const cta: CTACardData = {
   subtitle: "With pretty decent cost!",
   description: "Need help building modern web apps, playful UI/UX experiences, 3D websites, or custom frontend development? Feel free to reach out!",
   buttonText: "Let's Work Together",
-  buttonUrl: "https://www.linkedin.com/in/bagus-insan-pradana-69513434a/",
+  buttonUrl: "https://wa.me/6288801437913?text=Hi%20Bagus!%20I%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.",
 };
 
 export const connect: ConnectData = {
