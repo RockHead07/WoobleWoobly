@@ -3,19 +3,19 @@ import { support } from '../data/links';
 ---
 
 <section class="w-full pt-2">
-  <!-- Solid Yellow Rectangular Card Background with Sharp Corners -->
-  <div class="relative overflow-hidden rounded-md bg-[#FFDD00] border-2 border-amber-400 p-5 sm:p-6 text-center flex flex-col items-center gap-3.5 shadow-sm">
+  <!-- Solid White Card Container with Sharp Corners -->
+  <div class="relative overflow-hidden rounded-md bg-white border border-[#D6E6F2] p-5 sm:p-6 text-center flex flex-col items-center gap-3.5 shadow-sm hover:shadow-md transition-shadow">
     
     <div class="space-y-1 relative z-10">
-      <h3 class="text-base font-black text-slate-950 tracking-tight flex items-center justify-center gap-1.5">
+      <h3 class="text-base font-bold text-slate-900 tracking-tight flex items-center justify-center gap-1.5">
         <span>{support.title}</span>
       </h3>
-      <p class="text-xs sm:text-sm text-slate-900 font-semibold max-w-sm leading-relaxed">
+      <p class="text-xs sm:text-sm text-slate-600 font-medium max-w-sm leading-relaxed">
         {support.description}
       </p>
     </div>
 
-    <!-- 3D Tactile Squircle Button Mount -->
+    <!-- Official Buy Me a Coffee Vibrant Yellow (#FFDD00) 3D Tactile Button -->
     <div class="relative z-10 flex justify-center w-full max-w-xs">
       <a
         id="coffee-3d-btn"
@@ -39,8 +39,8 @@ import { support } from '../data/links';
     let p = 0; // Press state (0 = released, 1 = pressed)
     let w = 240;
     const u = 'coffee_3d';
-    const hb = '0f172a'; // Slate-900 base for high contrast against yellow card
-    const hd = '020617';
+    const hb = 'FFDD00'; // Exact Buy Me a Coffee Yellow (#FFDD00)
+    const hd = 'C99700'; // Deep golden amber shadow
 
     const S = (width: number, height: number, radius: number, x: number, y: number): string => {
       let path = '';
@@ -66,7 +66,7 @@ import { support } from '../data/links';
     const color = (hex: string, pct: number, k: string) => `color-mix(in srgb, #${hex} ${pct}%, ${k})`;
 
     const render = () => {
-      const hi = color(hb, 65, 'white');
+      const hi = color(hb, 75, 'white');
       const sh = color(hd, 35, 'black');
       const label = 'BUY ME A COFFEE';
 
@@ -92,34 +92,34 @@ import { support } from '../data/links';
               <stop offset="1" stop-color="${color(hd, 60, 'white')}"/>
             </linearGradient>
             <linearGradient id="faceGrad${u}" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#1e293b"/>
-              <stop offset="100%" stop-color="#0f172a"/>
+              <stop offset="0" stop-color="#FFE833"/>
+              <stop offset="100%" stop-color="#FFDD00"/>
             </linearGradient>
           </defs>
           
           <!-- 3D Base Drop Shadow Layer -->
-          <path d="${S(w, 42, 12, 5, baseY)}" fill="${color(hd, 60, 'black')}" filter="url(#b${u})"/>
+          <path d="${S(w, 42, 8, 5, baseY)}" fill="${color(hd, 60, 'black')}" filter="url(#b${u})"/>
           
           <!-- 3D Base Outer Bevel -->
-          <path d="${S(w, 42, 12, 5, baseY)}" fill="${color(hd, 75, 'black')}" stroke="${color(hd, 45, 'black')}" stroke-width="1.2"/>
+          <path d="${S(w, 42, 8, 5, baseY)}" fill="${color(hd, 75, 'black')}" stroke="${color(hd, 45, 'black')}" stroke-width="1.2"/>
           
           <!-- 3D Extruded Layer Slices -->
           ${Array.from({ length: Math.max(0, baseY - faceY) })
-            .map((_, k) => `<path d="${S(w, 42, 12, 5, faceY + 1 + k)}" fill="url(#g${u})"/>`)
+            .map((_, k) => `<path d="${S(w, 42, 8, 5, faceY + 1 + k)}" fill="url(#g${u})"/>`)
             .join('')}
           
-          <!-- 3D Top Cap / Face -->
-          <path d="${S(w, 42, 12, 5, faceY)}" fill="url(#faceGrad${u})" stroke="${hi}" stroke-width="1.5"/>
+          <!-- 3D Top Cap / Face in #FFDD00 -->
+          <path d="${S(w, 42, 8, 5, faceY)}" fill="url(#faceGrad${u})" stroke="${hi}" stroke-width="1.5"/>
           
           <!-- 3D Top Specular Shine Line -->
-          <path d="${S(w - 6, 20, 8, 8, faceY + 2)}" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" opacity="0.7"/>
+          <path d="${S(w - 6, 20, 6, 8, faceY + 2)}" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" opacity="0.8"/>
           
-          <!-- Icon & Bold Label properly spaced without overlap -->
+          <!-- Icon & Bold Label properly spaced -->
           <g transform="translate(${5 + w / 2}, ${21 + faceY})">
-            <!-- Coffee Icon SVG -->
+            <!-- Buy Me a Coffee Cup SVG Icon -->
             <path d="M-82 -6 H-66 V2 C-66 4 -68 6 -71 6 H-77 C-80 6 -82 4 -82 2 Z M-66 -4 H-63 C-61.5 -4 -61.5 -1 -63 -1 H-66 Z M-84 8 H-62" 
-                  fill="none" stroke="#FFDD00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <text text-anchor="middle" dominant-baseline="central" fill="#ffffff" dx="10"
+                  fill="none" stroke="#0D0C22" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text text-anchor="middle" dominant-baseline="central" fill="#0D0C22" dx="10"
                   style="pointer-events:none;font-weight:900;font-size:12.5px;letter-spacing:1px;font-family:system-ui, -apple-system, sans-serif;">
               ${label}
             </text>
