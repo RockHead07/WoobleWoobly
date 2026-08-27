@@ -3,12 +3,12 @@ import { cta } from '../../data/links';
 ---
 
 <section class="w-full">
-  <!-- Solid White Card with Sharp Corners -->
-  <div class="relative overflow-hidden rounded-md bg-white border border-[#ADC2A9]/60 p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
+  <!-- Solid White Card with Sharp Corners & Pastel Blue Accents -->
+  <div class="relative overflow-hidden rounded-md bg-white border border-[#D6E6F2] p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
     <div class="relative z-10 flex flex-col space-y-3.5">
       <!-- Badge Row -->
       <div class="flex items-center justify-between gap-2">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-[#D3E4CD]/70 border border-[#ADC2A9] text-xs font-bold text-slate-800">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-sm bg-[#B9D7EA]/90 border border-[#769FCD]/40 text-xs font-bold text-slate-800">
           {cta.badge}
         </span>
         {cta.price && (
@@ -26,7 +26,7 @@ import { cta } from '../../data/links';
         <h2 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">
           {cta.title}
         </h2>
-        <p class="text-xs sm:text-sm font-bold text-[#99A799] mt-0.5">
+        <p class="text-xs sm:text-sm font-bold text-[#769FCD] mt-0.5">
           {cta.subtitle}
         </p>
       </div>
@@ -41,7 +41,7 @@ import { cta } from '../../data/links';
         href={cta.buttonUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-md font-bold text-sm text-white bg-[#99A799] hover:bg-[#869486] shadow-sm transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+        class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-md font-bold text-sm text-white bg-[#769FCD] hover:bg-[#648ebc] shadow-sm shadow-[#769FCD]/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
       >
         <span>{cta.buttonText}</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

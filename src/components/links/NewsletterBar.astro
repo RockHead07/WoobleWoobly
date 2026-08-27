@@ -3,12 +3,12 @@ import { connect } from '../../data/links';
 ---
 
 <section class="w-full">
-  <!-- Solid White Card with Sharp Corners -->
-  <div class="relative overflow-hidden rounded-md bg-white border border-[#ADC2A9]/60 p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
+  <!-- Solid White Card with Sharp Corners & Pastel Blue Accents -->
+  <div class="relative overflow-hidden rounded-md bg-white border border-[#D6E6F2] p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
     
     <!-- Top Header of Connect section -->
     <div class="flex items-center gap-2.5 mb-2">
-      <div class="w-8 h-8 rounded-sm bg-[#D3E4CD]/60 border border-[#ADC2A9] text-[#99A799] flex items-center justify-center shadow-sm">
+      <div class="w-8 h-8 rounded-sm bg-[#F7FBFC] border border-[#D6E6F2] text-[#769FCD] flex items-center justify-center shadow-sm">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
@@ -35,7 +35,7 @@ import { connect } from '../../data/links';
           type="email"
           required
           placeholder={connect.emailPlaceholder}
-          class="w-full bg-[#F9FBF7] border border-[#ADC2A9]/70 focus:border-[#99A799] focus:bg-white rounded-md px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#99A799] transition-all shadow-sm"
+          class="w-full bg-[#F7FBFC] border border-[#D6E6F2] focus:border-[#769FCD] focus:bg-white rounded-md px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#769FCD] transition-all shadow-sm"
         />
       </div>
 
@@ -49,14 +49,14 @@ import { connect } from '../../data/links';
           rows="2"
           required
           placeholder={connect.messagePlaceholder}
-          class="w-full bg-[#F9FBF7] border border-[#ADC2A9]/70 focus:border-[#99A799] focus:bg-white rounded-md px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#99A799] transition-all shadow-sm resize-none"
+          class="w-full bg-[#F7FBFC] border border-[#D6E6F2] focus:border-[#769FCD] focus:bg-white rounded-md px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-[#769FCD] transition-all shadow-sm resize-none"
         ></textarea>
       </div>
 
       <!-- Submit Button with Sharp Radius -->
       <button
         type="submit"
-        class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-md font-bold text-xs sm:text-sm text-white bg-[#99A799] hover:bg-[#869486] shadow-sm transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
+        class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-md font-bold text-xs sm:text-sm text-white bg-[#769FCD] hover:bg-[#648ebc] shadow-sm shadow-[#769FCD]/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
       >
         <span>{connect.buttonText}</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
