@@ -155,6 +155,6 @@ export const support: SupportData = {
   title: "Enjoying my open-source work?",
   description: "Support my work with a coffee to fuel new templates & tutorials!",
   buttonText: "Buy me a coffee",
-  url: "https://buymeacoffee.com",
+  url: "https://buymeacoffee.com/danabagus0q",
   icon: "coffee",
 };
