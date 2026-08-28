@@ -43,6 +43,7 @@ export interface ConnectData {
   messagePlaceholder: string;
   buttonText: string;
   endpointUrl?: string;
+  targetEmail?: string;
 }
 
 export interface SupportData {
@@ -133,13 +134,15 @@ export const cta: CTACardData = {
   buttonUrl: "https://wa.me/6288801437913?text=Hi%20Bagus!%20I%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.",
 };
 
+
 export const connect: ConnectData = {
   title: "Connect with me",
   description: "Have a project in mind, collaboration idea, or just want to say hi? Drop your email and a message below!",
   emailPlaceholder: "Your email address (e.g. name@example.com)",
   messagePlaceholder: "Write your message or inquiry here...",
   buttonText: "Send Message",
-  endpointUrl: "#",
+  targetEmail: "dana.bagus07@gmail.com",
+  endpointUrl: "https://formsubmit.co/ajax/dana.bagus07@gmail.com",
 };
 
 // Backward-compatible alias for existing imports

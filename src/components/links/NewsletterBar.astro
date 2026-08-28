@@ -1,5 +1,8 @@
 ---
 import { connect } from '../../data/links';
+
+const targetEndpoint = connect.endpointUrl || 'https://formsubmit.co/ajax/dana.bagus07@gmail.com';
+const targetEmail = connect.targetEmail || 'dana.bagus07@gmail.com';
 ---
 
 <section class="w-full">
@@ -24,7 +27,7 @@ import { connect } from '../../data/links';
     </p>
 
     <!-- Connect Form with Email & Message Fields -->
-    <form id="connect-form" class="flex flex-col space-y-3">
+    <form id="connect-form" data-endpoint={targetEndpoint} data-email={targetEmail} class="flex flex-col space-y-3">
       <!-- Email Field -->
       <div>
         <label for="connect-email" class="block text-xs font-bold text-slate-700 mb-1">
@@ -32,6 +35,7 @@ import { connect } from '../../data/links';
         </label>
         <input
           id="connect-email"
+          name="email"
           type="email"
           required
           placeholder={connect.emailPlaceholder}
@@ -46,6 +50,7 @@ import { connect } from '../../data/links';
         </label>
         <textarea
           id="connect-message"
+          name="message"
           rows="2"
           required
           placeholder={connect.messagePlaceholder}
@@ -53,29 +58,98 @@ import { connect } from '../../data/links';
         ></textarea>
       </div>
 
+      <!-- Status Alerts -->
+      <div id="connect-status" class="hidden text-xs rounded-md p-3 font-medium transition-all"></div>
+
       <!-- Submit Button with Sharp Radius -->
       <button
+        id="connect-submit-btn"
         type="submit"
-        class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-md font-bold text-xs sm:text-sm text-white bg-[#769FCD] hover:bg-[#648ebc] shadow-sm shadow-[#769FCD]/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
+        class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-md font-bold text-xs sm:text-sm text-white bg-[#769FCD] hover:bg-[#648ebc] shadow-sm shadow-[#769FCD]/20 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
       >
-        <span>{connect.buttonText}</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <span id="btn-text">{connect.buttonText}</span>
+        <svg id="btn-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
         </svg>
       </button>
+
+      <!-- Direct Mailto Helper -->
+      <div class="text-center pt-1">
+        <a
+          href={`mailto:${targetEmail}?subject=Inquiry%20via%20Bio-Link`}
+          class="text-[11px] font-semibold text-slate-500 hover:text-[#769FCD] transition-colors"
+        >
+          Or send directly to <span class="underline underline-offset-2">{targetEmail}</span> ↗
+        </a>
+      </div>
     </form>
   </div>
 </section>
 
 <script>
-  const form = document.getElementById('connect-form') as HTMLFormElement | null;
-  if (form) {
-    form.addEventListener('submit', (e) => {
+  const setupConnectForm = () => {
+    const form = document.getElementById('connect-form') as HTMLFormElement | null;
+    const statusEl = document.getElementById('connect-status');
+    const submitBtn = document.getElementById('connect-submit-btn') as HTMLButtonElement | null;
+    const btnText = document.getElementById('btn-text');
+
+    if (!form || !statusEl || !submitBtn || !btnText) return;
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const endpoint = form.getAttribute('data-endpoint') || 'https://formsubmit.co/ajax/dana.bagus07@gmail.com';
+      const targetEmail = form.getAttribute('data-email') || 'dana.bagus07@gmail.com';
+
       const emailInput = document.getElementById('connect-email') as HTMLInputElement | null;
-      const email = emailInput?.value || 'your email';
-      alert(`Thank you! Your message has been received from ${email}. I will get back to you shortly! 🚀`);
-      form.reset();
+      const messageInput = document.getElementById('connect-message') as HTMLTextAreaElement | null;
+
+      const email = emailInput?.value.trim();
+      const message = messageInput?.value.trim();
+
+      if (!email || !message) return;
+
+      // Loading state
+      submitBtn.disabled = true;
+      btnText.innerText = 'Sending message...';
+      statusEl.className = 'hidden';
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            message: message,
+            _subject: `New Message from ${email} (WoobleWoobly Bio-Link)`,
+            _template: 'table',
+          }),
+        });
+
+        if (response.ok) {
+          statusEl.className = 'block bg-[#F7FBFC] border border-[#B9D7EA] text-[#769FCD] p-3 rounded-md text-xs font-bold text-center';
+          statusEl.innerHTML = `✨ Message sent successfully! I will reply to <strong>${email}</strong> soon.`;
+          form.reset();
+        } else {
+          throw new Error('Failed to send');
+        }
+      } catch (err) {
+        statusEl.className = 'block bg-rose-50 border border-rose-200 text-rose-700 p-3 rounded-md text-xs font-medium text-center';
+        statusEl.innerHTML = `⚠️ Failed to send via form. <a href="mailto:${targetEmail}?subject=Direct%20Inquiry&body=${encodeURIComponent(message)}" class="underline font-bold">Click here to send directly via email ↗</a>`;
+      } finally {
+        submitBtn.disabled = false;
+        btnText.innerText = 'Send Message';
+      }
     });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupConnectForm);
+  } else {
+    setupConnectForm();
   }
+
+  document.addEventListener('astro:page-load', setupConnectForm);
 </script>
