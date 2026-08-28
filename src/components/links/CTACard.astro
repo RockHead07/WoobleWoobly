@@ -23,8 +23,14 @@ import { cta } from '../../data/links';
 
       <!-- Title & Subtitle -->
       <div>
-        <h2 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">
-          {cta.title}
+        <h2 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight flex items-center gap-1.5">
+          <span>{cta.title}</span>
+          <img
+            src="/icons/gigs-sticker.gif"
+            alt="sticker"
+            class="w-6 h-6 sm:w-7 sm:h-7 object-contain inline-block -mt-0.5 select-none pointer-events-none"
+            loading="eager"
+          />
         </h2>
         <p class="text-xs sm:text-sm font-bold text-[#769FCD] mt-0.5">
           {cta.subtitle}
