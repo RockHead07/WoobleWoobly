@@ -105,7 +105,7 @@ export const quickLinks: QuickLink[] = [
     title: "Open Source Projects",
     description: "Explore my repositories, tools, and code experiments",
     url: "https://github.com/RockHead07?tab=repositories",
-    icon: "code",
+    icon: "github",
     badge: "GitHub",
   },
   {
