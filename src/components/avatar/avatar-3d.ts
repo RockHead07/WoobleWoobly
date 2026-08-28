@@ -6,23 +6,9 @@ export function init3DAvatar(containerId: string) {
   if (!container) return;
 
   const canvasContainer = container.querySelector<HTMLElement>('[data-avatar-canvas]');
-  const speechBubble = container.querySelector<HTMLElement>('[data-speech-bubble]');
-  const speechText = container.querySelector<HTMLElement>('[data-speech-text]');
-  const speechEmoji = container.querySelector<HTMLElement>('[data-speech-emoji]');
   const avatarWrapper = container.querySelector<HTMLElement>('[data-avatar-head]');
 
   if (!canvasContainer || !avatarWrapper) return;
-
-  // Quotes on click
-  const chibiQuotes = [
-    { text: "Hai! Semangat ya! ✨", emoji: "(=^･ω･^=)" },
-    { text: "Kamu ngeklik aku! (≧◡≦)", emoji: "💖" },
-    { text: "Looking sharp today!", emoji: "👀" },
-    { text: "Explore the links! 🚀", emoji: "(★ω★)" },
-    { text: "Wooble Woobly~ ♪", emoji: "(´｡• ᵕ •｡`)" },
-    { text: "Jangan lupa senyum! 😊", emoji: "⭐" },
-  ];
-  let quoteIndex = 0;
 
   // Setup Three.js Scene
   const width = canvasContainer.clientWidth || 96;
@@ -129,18 +115,6 @@ export function init3DAvatar(containerId: string) {
 
   // Click handler
   avatarWrapper.addEventListener('click', () => {
-    quoteIndex = (quoteIndex + 1) % chibiQuotes.length;
-    if (speechText && speechEmoji) {
-      speechText.innerText = chibiQuotes[quoteIndex].text;
-      speechEmoji.innerText = chibiQuotes[quoteIndex].emoji;
-    }
-
-    if (speechBubble) {
-      speechBubble.classList.remove('scale-100');
-      speechBubble.classList.add('scale-110');
-      setTimeout(() => speechBubble.classList.remove('scale-110'), 250);
-    }
-
     spawnHeartParticle();
 
     // Play action animation if available
