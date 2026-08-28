@@ -40,5 +40,10 @@ Consult these guides before working on related tasks:
 - Custom cursors must be disabled on touchscreens / Android (`@media (pointer: coarse), (hover: none)` and navigator checks).
 - Social / external links on mobile touch must feature a 1-second delay to show the hover tooltip before opening.
 
-### Profile Assets
+### Profile & External Integration Assets
 - Use the animated Tenor sticker GIF at `public/icons/verified.gif` for the verified creator badge next to the profile name.
+- **Site Favicon**: Custom doodle avatar at `public/favicon.png` / `public/favicon.ico`.
+- **Support / Buy Me a Coffee**: `https://buymeacoffee.com/danabagus0q`.
+- **Target Contact Email**: `dana.bagus07@gmail.com` via FormSubmit AJAX endpoint.
+- **Production Domain**: `https://links.rockhead07.tech` (Cloudflare DNS Proxy disabled / DNS Only).
+- **Floating 3D Avatar**: 3D Three.js canvas widget without text speech bubble dialogs.
