@@ -1,6 +1,7 @@
 <div align="center">
 
-<img width="480" alt="Image" src="https://github.com/user-attachments/assets/d02b0463-60b8-4122-8f48-46018ffd52b3" />
+<img width="256" alt="Image" src="https://github.com/user-attachments/assets/d02b0463-60b8-4122-8f48-46018ffd52b3" />
+
 # WoobleWoobly
 
 **A playful, 3D-enhanced personal bio link & hub built with Astro, Tailwind CSS v4, and Three.js.**
