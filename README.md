@@ -4,7 +4,9 @@
 
 # WoobleWoobly
 
-**A playful, 3D-enhanced personal bio link & hub built with Astro, Tailwind CSS v4, and Three.js.**
+<p> 
+   <em>A playful, 3D-enhanced personal bio link & hub built with Astro, Tailwind CSS v4, and Three.js.</em> 
+</p>
 
 [![Astro](https://img.shields.io/badge/Astro-v7-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
@@ -16,11 +18,13 @@
 
 </div>
 
----
-
 ## 🌟 Overview
 
-**WoobleWoobly** is a personalized, interactive alternative to standard Linktree pages. Designed and developed by [Bagus Insan Pradana (@rockhead07)](https://github.com/RockHead07), it combines high-performance static rendering with tactile UI design, smooth micro-interactions, and a real-time interactive 3D floating character.
+<p align="center">
+  <strong>~54% less code (up to 94%) &middot; ~20% cheaper &middot; ~27% faster &middot; 100% safe</strong><br>
+  <sub>**WoobleWoobly** is a personalized, interactive alternative to standard Linktree pages. Designed and developed by [Bagus Insan Pradana (@rockhead07)](https://github.com/RockHead07), it combines high-performance static rendering with tactile UI design, smooth micro-interactions, and a real-time interactive 3D floating character.
+</sub>
+</p>
 
 ### ✨ Key Features
 
