@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 
 export function init3DAvatar(containerId: string) {
   const container = document.getElementById(containerId);
@@ -56,6 +57,8 @@ export function init3DAvatar(containerId: string) {
 
   // Load Model
   const loader = new GLTFLoader();
+  // Model is meshopt-compressed (EXT_meshopt_compression)
+  loader.setMeshoptDecoder(MeshoptDecoder);
   loader.load(
     '/avatar/smol_calli.glb',
     (gltf) => {

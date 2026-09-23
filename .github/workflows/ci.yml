@@ -9,23 +9,38 @@ on:
       - main
   workflow_dispatch:
 
+# Least privilege: this workflow only reads the repo
+permissions:
+  contents: read
+
+# Cancel superseded runs on the same branch / PR
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: Typecheck & Build Validation
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js 22.x
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
 
       - name: Astro type check
         run: npx astro check
@@ -36,3 +51,13 @@ jobs:
       - name: Verify build artifacts
         run: |
           test -f dist/index.html && echo "✓ Static index.html successfully generated"
+
+      - name: Guard against oversized assets (> 5 MB)
+        run: |
+          big=$(find dist -type f -size +5M)
+          if [ -n "$big" ]; then
+            echo "::error::Files over 5 MB in dist (compress them first):"
+            ls -lh $big
+            exit 1
+          fi
+          echo "✓ No asset over 5 MB"

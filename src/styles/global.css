@@ -10,8 +10,11 @@
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  *, *::before, *::after {
-    cursor: none !important;
-  }
+/* Native cursor is hidden only once CustomCursor has activated (it sets this class),
+   so devices it skips, like touchscreen laptops, keep their normal cursor. */
+html.has-custom-cursor,
+html.has-custom-cursor *,
+html.has-custom-cursor *::before,
+html.has-custom-cursor *::after {
+  cursor: none !important;
 }

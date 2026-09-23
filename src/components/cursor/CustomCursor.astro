@@ -155,6 +155,7 @@
 
   if (isFinePointer) {
     const arrowCursor = new ArrowPointer();
+    document.documentElement.classList.add('has-custom-cursor');
 
     window.addEventListener('mousemove', (e) => {
       arrowCursor.move(e);

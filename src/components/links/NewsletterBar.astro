@@ -130,7 +130,10 @@ const targetEmail = connect.targetEmail || 'dana.bagus07@gmail.com';
 
         if (response.ok) {
           statusEl.className = 'block bg-[#F7FBFC] border border-[#B9D7EA] text-[#769FCD] p-3 rounded-md text-xs font-bold text-center';
-          statusEl.innerHTML = `✨ Message sent successfully! I will reply to <strong>${email}</strong> soon.`;
+          // Build with DOM nodes so the user-typed email is never parsed as HTML
+          const emailEl = document.createElement('strong');
+          emailEl.textContent = email;
+          statusEl.replaceChildren('✨ Message sent successfully! I will reply to ', emailEl, ' soon.');
           form.reset();
         } else {
           throw new Error('Failed to send');
