@@ -37,8 +37,6 @@
 - 📱 **Mobile & Touch Optimized**: Responsive layout with touch drag support for the 3D model and mobile-specific interaction delays.
 - 🗂️ **Centralized Configuration**: Easily customize all profile info, social links, quick links, and services from a single TypeScript file (`src/data/links.ts`).
 
----
-
 ## 🛠️ Tech Stack
 
 - **Framework**: [Astro](https://astro.build) (v7 / Static Output)
@@ -46,8 +44,6 @@
 - **3D Graphics**: [Three.js](https://threejs.org) (`GLTFLoader`, `OrbitControls`)
 - **Typography**: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
 - **Icons & Assets**: Custom SVG icons, Tenor verified badge sticker, and Smol Calli 3D asset
-
----
 
 ## 📁 Project Structure
 
@@ -75,8 +71,6 @@ WoobleWoobly/
 ├── astro.config.mjs        # Astro & Vite configuration
 └── package.json            # Dependencies & scripts
 ```
-
----
 
 ## 🚀 Getting Started
 
@@ -110,8 +104,6 @@ WoobleWoobly/
    ```
    Production-ready static files will be generated in the `dist/` directory.
 
----
-
 ## ⚙️ Customization
 
 Customize all content by editing `src/data/links.ts`:
@@ -144,8 +136,6 @@ export const quickLinks = [
 ];
 ```
 
----
-
 ## 🚢 Deployment
 
 Since this project outputs standard static files, it can be deployed to any modern static hosting platform:
@@ -164,13 +154,9 @@ Since this project outputs standard static files, it can be deployed to any mode
 3. Set build command to `npm run build` and output directory to `dist`.
 4. Connect your custom domain in the **Custom domains** tab.
 
----
-
 ## 📄 License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
----
 
 <div align="center">
   Crafted with ❤️ by <a href="https://github.com/RockHead07">Bagus Insan Pradana (@rockhead07)</a>
