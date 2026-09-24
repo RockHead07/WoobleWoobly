@@ -113,20 +113,20 @@ export const quickLinks: QuickLink[] = [
     title: "Professional Network",
     description: "Connect with me on LinkedIn for collaborations & opportunities",
     url: "https://www.linkedin.com/in/bagus-insan-pradana-69513434a/",
-    icon: "book-open",
+    icon: "linkedin",
   },
   {
     id: "youtube-channel",
     title: "Creative Content",
     description: "Watch tutorials, demos, and creative dev showcases",
     url: "https://www.youtube.com/@rockhead0745",
-    icon: "mail",
+    icon: "youtube",
     badge: "YouTube",
   },
 ];
 
 export const cta: CTACardData = {
-  badge: "💼 Available for Hire",
+  badge: "Available for hire",
   title: "Open for Any Side Gigs",
   subtitle: "With pretty decent cost!",
   description: "Need help building modern web apps, playful UI/UX experiences, 3D websites, or custom frontend development? Feel free to reach out!",

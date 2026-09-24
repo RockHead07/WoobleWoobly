@@ -1,4 +1,12 @@
 @import "tailwindcss";
+@import "@fontsource-variable/plus-jakarta-sans";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* Darker shade of the #769FCD brand blue, for accent-colored TEXT on light backgrounds.
+     #769FCD itself is only 2.7:1 on white; this passes WCAG AA (4.7:1). */
+  --color-brand-ink: #4A76A8;
+}
 
 @layer base {
   body {
@@ -6,7 +14,16 @@
     color: #1e293b;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Respect reduced-motion: kill transitions, hover lifts and keyframe animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -17,4 +34,11 @@ html.has-custom-cursor *,
 html.has-custom-cursor *::before,
 html.has-custom-cursor *::after {
   cursor: none !important;
+}
+
+/* Text fields keep the native I-beam so the caret position stays readable */
+html.has-custom-cursor input:not([type="button"]):not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+html.has-custom-cursor textarea,
+html.has-custom-cursor [contenteditable="true"] {
+  cursor: text !important;
 }

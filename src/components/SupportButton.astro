@@ -54,25 +54,3 @@ import { support } from '../data/links';
     </div>
   </div>
 </section>
-
-<script>
-  const setupCoffeeButton = () => {
-    const btn = document.getElementById('coffee-3d-btn') as HTMLAnchorElement | null;
-    if (!btn) return;
-
-    btn.addEventListener('click', (e) => {
-      const url = btn.href;
-      if (url && !e.defaultPrevented) {
-        // Native anchor target="_blank" opens the link in a new tab
-      }
-    });
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupCoffeeButton);
-  } else {
-    setupCoffeeButton();
-  }
-
-  document.addEventListener('astro:page-load', setupCoffeeButton);
-</script>

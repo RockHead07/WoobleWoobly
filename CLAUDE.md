@@ -27,7 +27,8 @@ Consult these guides before working on related tasks:
 - **Base Background**: `#F7FBFC` (page background & form inputs)
 - **Soft Ambient / Glass**: `#D6E6F2` (subtle card borders & soft ambient light glows)
 - **Borders & Badges**: `#B9D7EA` (accent badges, icon boxes, active hover borders)
-- **Primary Brand / Action**: `#769FCD` (action buttons, `@rockhead07` handle, verified accents, active links)
+- **Primary Brand / Action**: `#769FCD` (action button backgrounds, borders, icons, verified accents). Button labels on it use dark `text-slate-900` (6.5:1), never white (2.8:1 fails WCAG AA).
+- **Brand Ink**: `#4A76A8` (`text-brand-ink` token in `global.css`), the darker shade of the brand blue for accent-colored TEXT on light backgrounds: `@rockhead07` handle, subtitles, link hovers, status messages.
 - **Dot Grid Pattern**: Dark gray `#334155` at `opacity-30` (never blue)
 - **Support / Buy Me a Coffee Card**: Solid yellow `#FFDD00` rectangular card container
 - **No AI Slop Gradients**: Strictly avoid default purple/violet/indigo gradients
