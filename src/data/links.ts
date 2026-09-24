@@ -128,7 +128,7 @@ export const quickLinks: QuickLink[] = [
 export const cta: CTACardData = {
   badge: "Available for hire",
   title: "Open for Any Side Gigs",
-  subtitle: "With pretty decent cost!",
+  subtitle: "At a fair price.",
   description: "Need help building modern web apps, playful UI/UX experiences, 3D websites, or custom frontend development? Feel free to reach out!",
   buttonText: "Let's Work Together",
   buttonUrl: "https://wa.me/6288801437913?text=Hi%20Bagus!%20I%20would%20like%20to%20discuss%20a%20project%20or%20collaboration.",
