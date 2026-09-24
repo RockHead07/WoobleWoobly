@@ -5,12 +5,11 @@
 # WoobleWoobly
 
 <p> 
-   <em>A playful, 3D-enhanced personal bio link & hub built with Astro, Tailwind CSS v4, and Three.js.</em> 
+   <em>A playful personal bio link & hub built with Astro and Tailwind CSS v4.</em> 
 </p>
 
 [![Astro](https://img.shields.io/badge/Astro-v7-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Three.js](https://img.shields.io/badge/Three.js-r185-black?logo=three.js&logoColor=white)](https://threejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -22,41 +21,38 @@
 
 <p align="center">
   <strong>~54% less code (up to 94%) &middot; ~20% cheaper &middot; ~27% faster &middot; 100% safe</strong><br>
-  <sub>**WoobleWoobly** is a personalized, interactive alternative to standard Linktree pages. Designed and developed by [Bagus Insan Pradana (@rockhead07)](https://github.com/RockHead07), it combines high-performance static rendering with tactile UI design, smooth micro-interactions, and a real-time interactive 3D floating character.
+  <sub>**WoobleWoobly** is a personalized, interactive alternative to standard Linktree pages. Designed and developed by [Bagus Insan Pradana (@rockhead07)](https://github.com/RockHead07), it combines high-performance static rendering with tactile UI design, smooth micro-interactions, and an illustrated character whose eyes follow your cursor.
 </sub>
 </p>
 
 ### ✨ Key Features
 
-- 🧸 **Interactive 3D Floating Avatar**: Powered by Three.js with orbit controls, inertia rotation, floating animations, and lightweight GLB model loading.
+- 👀 **Eye-Tracking Character**: Illustrated profile character whose pupils follow the cursor, with blinks and a click reaction.
 - 🎨 **Minimal & Tactile Design System**: Clean pastel blue aesthetic (`#F7FBFC`, `#D6E6F2`, `#B9D7EA`, `#769FCD`), sharp corner cards (`rounded-md`), and subtle dot grid patterns without clunky AI gradients.
 - ⚡ **Blazing Fast Performance**: Zero unnecessary client runtime overhead using Astro's Static Site Generation (SSG).
 - 🖱️ **Custom Interactive Cursor**: Smooth cursor tracking with hover-state scaling and magnetic feel (gracefully disabled on touch/mobile devices).
 - 💼 **Service & Collaboration CTA**: Built-in call-to-action cards for freelance/contract inquiries with direct WhatsApp integration.
 - ☕ **Creator Support Card**: Standout support card container for Buy Me a Coffee.
-- 📱 **Mobile & Touch Optimized**: Responsive layout with touch drag support for the 3D model and mobile-specific interaction delays.
+- 📱 **Mobile & Touch Optimized**: Responsive layout with mobile-specific interaction delays.
 - 🗂️ **Centralized Configuration**: Easily customize all profile info, social links, quick links, and services from a single TypeScript file (`src/data/links.ts`).
 
 ## 🛠️ Tech Stack
 
 - **Framework**: [Astro](https://astro.build) (v7 / Static Output)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com) + `@tailwindcss/vite`
-- **3D Graphics**: [Three.js](https://threejs.org) (`GLTFLoader`, `OrbitControls`)
 - **Typography**: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
-- **Icons & Assets**: Custom SVG icons, Tenor verified badge sticker, and Smol Calli 3D asset
+- **Icons & Assets**: Custom SVG icons, and Tenor verified badge sticker
 
 ## 📁 Project Structure
 
 ```text
 WoobleWoobly/
 ├── public/
-│   ├── avatar/             # 3D GLTF/GLB models & fallback assets
 │   ├── icons/              # SVG & GIF badge icons (e.g. verified.gif)
 │   └── favicon.svg         # Site favicon
 ├── src/
 │   ├── assets/             # Profile pictures & bundled media
 │   ├── components/
-│   │   ├── avatar/         # Three.js 3D floating avatar component & physics
 │   │   ├── cursor/         # Custom interactive cursor logic & styling
 │   │   ├── links/          # Link cards, CTAs, newsletter & connect components
 │   │   └── profile/        # Profile header, verified badge, and social bar

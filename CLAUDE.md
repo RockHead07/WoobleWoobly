@@ -46,7 +46,6 @@ Consult these guides before working on related tasks:
 - **Support / Buy Me a Coffee**: `https://buymeacoffee.com/danabagus0q`.
 - **Target Contact Email**: `dana.bagus07@gmail.com` via FormSubmit AJAX endpoint.
 - **Production Domain**: `https://links.rockhead07.tech` (Cloudflare DNS Proxy disabled / DNS Only).
-- **Floating 3D Avatar**: 3D Three.js canvas widget without text speech bubble dialogs.
 
 ### Taste Skill (`design-taste-frontend`)
 - Installed at `.claude/skills/design-taste-frontend/SKILL.md` (pinned to leonxlnx/taste-skill@c184364). Use it for design and polish work on this site.
@@ -54,7 +53,7 @@ Consult these guides before working on related tasks:
   - Custom cursor (CustomCursor.astro) stays, with the touch/mobile disable rules above.
   - Stack stays Astro + vanilla TypeScript `<script>` + Tailwind v4. Do not add React, Next.js, Motion, or GSAP for styling work.
   - Inline SVG icons and the brand SVGs already in use are allowed.
-  - Emoji particles on the floating avatar stay.
   - Light mode only unless the owner asks for dark mode.
   - Palette, sharp radii, solid white cards, and the dot grid defined above are fixed brand tokens, not suggestions.
 - Adopt from the skill: zero em dashes in visible copy, one accent color, one radius system, WCAG AA contrast on buttons and forms, `prefers-reduced-motion` for animations, motion only when it communicates something.
+
